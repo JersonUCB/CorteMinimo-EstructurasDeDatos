@@ -5,67 +5,36 @@
 using namespace std;
 
 int main() {
-    Grafo<> g;
-    g.leerArchivo2("PRUEBA_Min_Cut.txt");
-    g.mostrar();
-
-}
-/*
-int main() {
     int op;
-    Grafo<> g;
-    string origen, destino;
-    int peso;
+    Grafo<int>* g = new Grafo<int>;
+    string v1, v2;
+    int dist;
+    int total;
+    int min = 100000;
 
     do {
         system("cls");
-        cout << "---------------------ALGORITMO DIJKSTRA------------------" << endl;
-        cout << "1. Leer archivo con peso" << endl;
-        cout << "2. Insertar arista" << endl;
-        cout << "3. Mostrar grafo" << endl;
-        cout << "4. Iniciar Padre, Marca y Distancia" << endl;
-        cout << "5. Dijkstra" << endl;
-        cout << "6. Mostrar todos los caminos de ORIGEN al resto de vertices" << endl;
-        cout << "7. Eliminar arista entre dos vertices" << endl;
-        cout << "0. Salir" << endl;
+        cout << "--------------------- ALGORITMO MIN CUT ------------------" << endl;
+        cout << "1. Leer de Archivo MIN CUT" << endl;
+        cout << "2. Mostrar el Grafo" << endl;
+        cout << "3. MinCut" << endl;
+        cout << "4. Encontrar el Minimo" << endl;
+        cout << "0. salir" << endl;
         cout << "Ingrese una opcion: ";
         cin >> op;
 
         switch (op) {
         case 1:
-            g.leerArchivo("PRUEBA_Min_Cut.txt");
+            g->leerArchivo("PRUEBA_Min_Cut.txt");
             break;
         case 2:
-            cout << "Ingrese nodo origen: ";
-            cin >> origen;
-            cout << "Ingrese nodo destino: ";
-            cin >> destino;
-            cout << "Ingrese peso: ";
-            cin >> peso;
-            g.insertarArista(origen, destino, peso);
+            g->mostrar();
             break;
         case 3:
-            g.mostrar();
+            //g.minCut();
             break;
         case 4:
-            
-            break;
-        case 5:
-            cout << "Ingrese nodo origen: ";
-            cin >> origen;
-            
-            break;
-        case 6:
-            cout << "Ingrese nodo origen: ";
-            cin >> origen;
-            g.mostrarCaminos(origen);
-            break;
-        case 7:
-            cout << "Ingrese el nodo origen: ";
-            cin >> origen;
-            cout << "Ingrese el nodo destino: ";
-            cin >> destino;
-            g.eliminarArista(origen, destino);
+            //cout << "El peso minimo encontrado es: " << g->minCut() << endl;
             break;
 
         case 0:
@@ -80,4 +49,3 @@ int main() {
 
     return 0;
 }
-*/

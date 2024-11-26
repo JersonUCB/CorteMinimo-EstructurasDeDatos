@@ -1,2 +1,4 @@
 ﻿  CorteMinimo.cpp
+C:\Users\Catolica-PC\source\repos\Estructura de Datos\CorteMinimo-EstructurasDeDatos\CorteMinimo\CorteMinimo.cpp(12,9): warning C4101: 'total': variable local sin referencia
+C:\Users\Catolica-PC\source\repos\Estructura de Datos\CorteMinimo-EstructurasDeDatos\CorteMinimo\CorteMinimo.cpp(11,9): warning C4101: 'dist': variable local sin referencia
   CorteMinimo.vcxproj -> C:\Users\Catolica-PC\source\repos\Estructura de Datos\CorteMinimo-EstructurasDeDatos\x64\Debug\CorteMinimo.exe

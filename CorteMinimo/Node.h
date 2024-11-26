@@ -10,11 +10,10 @@ class Node {
 private:
     string Padre;
     bool Marca;
-    int Distancia;
-    vector<pair<string, int>> listAdyacentes; // Lista de adyacentes {Nodo, Peso}
+    vector<T> listAdyacentes; // Lista de adyacentes
 
 public:
-    Node() : Padre("-1"), Marca(false), Distancia(INT_MAX) {}
+    Node() : Padre("-1"), Marca(false) {}
 
     void setPadre(const string& padre) { Padre = padre; }
     string getPadre() const { return Padre; }
@@ -22,18 +21,14 @@ public:
     void setMarca(bool marca) { Marca = marca; }
     bool getMarca() const { return Marca; }
 
-    void setDistancia(int distancia) { Distancia = distancia; }
-    int getDistancia() const { return Distancia; }
+    vector<T>& getListAdyacentes() { return listAdyacentes; }
 
-    vector<pair<string, int>>& getListAdyacentes() { return listAdyacentes; }
-
-    void insertarVecino(const string& nodo, int peso) {
-        listAdyacentes.push_back({ nodo, peso });
+    void insertarVecino(const T& nodo) {
+        listAdyacentes.push_back(nodo);
     }
 
     void mostrar() const {
-        for (const auto& [nodo, peso] : listAdyacentes) {
-            //cout << nodo << " (" << peso << "), ";
+        for (const auto& nodo : listAdyacentes) {
             cout << nodo << ",";
         }
         cout << endl;

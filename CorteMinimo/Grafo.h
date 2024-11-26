@@ -11,20 +11,6 @@ private:
     unordered_map<string, Node<T>> grafo;
 
 public:
-    void leerArchivo(const string& nombreArchivo) {
-        ifstream archivo(nombreArchivo);
-        if (!archivo.is_open()) {
-            cout << "Error al abrir el archivo." << endl;
-            return;
-        }
-        string origen, destino;
-        int peso;
-        while (archivo >> origen >> destino >> peso) {
-            insertarArista(origen, destino, peso);
-        }
-        archivo.close();
-        cout << "Archivo cargado correctamente." << endl;
-    }
 
     void leerArchivo2(const string& nombreArchivo) {
         ifstream archivo(nombreArchivo);
@@ -51,35 +37,14 @@ public:
     }
 
     void insertarArista(const string& origen, const string& destino, int peso) {
-        grafo[origen].insertarVecino(destino, peso);
-        grafo[destino].insertarVecino(origen, peso);
+        grafo[origen].insertarVecino(destino);
+        grafo[destino].insertarVecino(origen);
     }
 
     void mostrar() const {
         for (const auto& [nombre, nodo] : grafo) {
             cout << nombre << " -> ";
             nodo.mostrar();
-        }
-    }
-
-    
-
-
-    void mostrarCaminos(const string& origen) const {
-        for (const auto& [nombre, nodo] : grafo) {
-            if (nodo.getDistancia() == INT_MAX) {
-                cout << "No hay camino desde " << origen << " a " << nombre << endl;
-            }
-            else {
-                cout << " " << origen << " - " << nombre << " = (Distancia: " << nodo.getDistancia() << ") ||| ";
-                string actual = nombre;
-                while (actual != "-1") {
-                    cout << actual;
-                    actual = grafo.at(actual).getPadre();
-                    if (actual != "-1") cout << " <- ";
-                }
-                cout << endl;
-            }
         }
     }
 
@@ -108,6 +73,10 @@ public:
     }
 
     void contraer() {
+
+    }
+
+    void MinCut() {
 
     }
 };

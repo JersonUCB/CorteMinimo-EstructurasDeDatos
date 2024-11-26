@@ -1,2 +1,194 @@
 ﻿  CorteMinimo.cpp
-  CorteMinimo.vcxproj -> C:\Users\Catolica-PC\source\repos\Estructura de Datos\CorteMinimo-EstructurasDeDatos\x64\Debug\CorteMinimo.exe
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43,1): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43,37): error C2988: declaración o definición de plantilla irreconocible
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43,37): error C2143: error de sintaxis: falta ',' delante de '<'
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43,1): error C2244: 'Nodo<T>::setVector': no se puede hacer coincidir la definición de función con una declaración existente
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43): message : vea la declaración de 'Nodo<T>::setVector'
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43,1): message : definición
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43,1): message : 'void Nodo<T>::setVector(const int)'
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43,1): message : declaraciones existentes
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43,1): message : 'void Nodo<T>::setVector(const std::vector<T,std::allocator<_Ty>> &)'
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(64,39): error C2819: el tipo 'std::vector<T,std::allocator<T>>' no tiene un miembro sobrecargado 'operator ->'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(16): message : vea la declaración de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(64,39): message : ¿deseaba utilizar '.' en su lugar?
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(64,41): error C2039: "InsertarFin": no es un miembro de "std::vector<T,std::allocator<T>>"
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(16): message : vea la declaración de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2676: '!=' binario: 'std::vector<T,std::allocator<T>>' no define este operador o una conversión a un tipo aceptable para el operador predefinido
+          with
+          [
+              T=std::string
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\unordered_map(762,17): message : puede ser 'bool std::operator !=(const std::unordered_multimap<_Kty,_Ty,_Hasher,_Keyeq,_Alloc> &,const std::unordered_multimap<_Kty,_Ty,_Hasher,_Keyeq,_Alloc> &)'
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::unordered_multimap<_Kty,_Ty,_Hasher,_Keyeq,_Alloc> &,const std::unordered_multimap<_Kty,_Ty,_Hasher,_Keyeq,_Alloc> &)': no se pudo deducir el argumento plantilla para 'const std::unordered_multimap<_Kty,_Ty,_Hasher,_Keyeq,_Alloc> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\unordered_map(762): message : vea la declaración de 'std::operator !='
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::unordered_map<_Kty,_Ty,_Hasher,_Keyeq,_Alloc> &,const std::unordered_map<_Kty,_Ty,_Hasher,_Keyeq,_Alloc> &)': no se pudo deducir el argumento plantilla para 'const std::unordered_map<_Kty,_Ty,_Hasher,_Keyeq,_Alloc> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::list<_Ty,_Alloc> &,const std::list<_Ty,_Alloc> &)': no se pudo deducir el argumento plantilla para 'const std::list<_Ty,_Alloc> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::queue<_Ty,_Container> &,const std::queue<_Ty,_Container> &)': no se pudo deducir el argumento plantilla para 'const std::queue<_Ty,_Container> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::deque<_Ty,_Alloc> &,const std::deque<_Ty,_Alloc> &)': no se pudo deducir el argumento plantilla para 'const std::deque<_Ty,_Alloc> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)': no se pudo deducir el argumento plantilla para 'const std::vector<_Ty,_Alloc> &' de 'nullptr'
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &) noexcept': no se pudo deducir el argumento plantilla para 'const std::unique_ptr<_Ty,_Dx> &' de 'nullptr'
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept': no se pudo deducir el argumento plantilla para 'const std::unique_ptr<_Ty,_Dx> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)': no se pudo deducir el argumento plantilla para 'const std::unique_ptr<_Ty,_Dx> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept': no se pudo deducir el argumento plantilla para 'const std::shared_ptr<_Ty> &' de 'nullptr'
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept': no se pudo deducir el argumento plantilla para 'const std::shared_ptr<_Ty> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept': no se pudo deducir el argumento plantilla para 'const std::shared_ptr<_Ty> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const )': no se pudo deducir el argumento plantilla para 'const std::basic_string<_Elem,_Traits,_Alloc> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &)': no se pudo deducir el argumento plantilla para 'const _Elem *const ' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': no se pudo deducir el argumento plantilla para 'const std::basic_string<_Elem,_Traits,_Alloc> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::basic_string_view<_Elem,_Traits>,const _Identity<std::basic_string_view<_Elem,_Traits>>::type) noexcept': no se pudo deducir el argumento plantilla para 'const std::basic_string_view<_Elem,_Traits>' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const _Identity<std::basic_string_view<_Elem,_Traits>>::type,const std::basic_string_view<_Elem,_Traits>) noexcept': no se pudo deducir el argumento plantilla para 'const std::basic_string_view<_Elem,_Traits>' de 'nullptr'
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::basic_string_view<_Elem,_Traits>,const std::basic_string_view<_Elem,_Traits>) noexcept': no se pudo deducir el argumento plantilla para 'const std::basic_string_view<_Elem,_Traits>' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::tuple<_Types...> &,const std::tuple<_Types...> &)': no se pudo deducir el argumento plantilla para 'const std::tuple<_Types...> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept': no se pudo deducir el argumento plantilla para 'const std::allocator<_Ty> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)': no se pudo deducir el argumento plantilla para 'const std::istreambuf_iterator<_Elem,_Traits> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept': no se pudo deducir el argumento plantilla para 'const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &)': no se pudo deducir el argumento plantilla para 'const std::move_iterator<_Iter> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &)': no se pudo deducir el argumento plantilla para 'const std::reverse_iterator<_BidIt> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(78,46): error C2784: 'bool std::operator !=(const std::pair<_Ty1,_Ty2> &,const std::pair<_Ty1,_Ty2> &)': no se pudo deducir el argumento plantilla para 'const std::pair<_Ty1,_Ty2> &' de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(79,35): error C2819: el tipo 'std::vector<T,std::allocator<T>>' no tiene un miembro sobrecargado 'operator ->'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(16): message : vea la declaración de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(79,35): message : ¿deseaba utilizar '.' en su lugar?
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(79,37): error C2039: "printElements": no es un miembro de "std::vector<T,std::allocator<T>>"
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(16): message : vea la declaración de 'std::vector<T,std::allocator<T>>'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(84,68): error C2601: 'Grafo::VerticesAleatorio': las definiciones de funciones locales no son válidas
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(75): message : esta línea contiene un elemento '{' y no se ha encontrado su elemento de cierre
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(99,55): error C2601: 'Grafo::Contraer': las definiciones de funciones locales no son válidas
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(75): message : esta línea contiene un elemento '{' y no se ha encontrado su elemento de cierre
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(114,41): error C2601: 'Grafo::getTamanioGrafo': las definiciones de funciones locales no son válidas
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(75): message : esta línea contiene un elemento '{' y no se ha encontrado su elemento de cierre
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(118,39): error C2601: 'Grafo::contarAristas': las definiciones de funciones locales no son válidas
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(75): message : esta línea contiene un elemento '{' y no se ha encontrado su elemento de cierre
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(125,38): error C2601: 'Grafo::copiaLista': las definiciones de funciones locales no son válidas
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(75): message : esta línea contiene un elemento '{' y no se ha encontrado su elemento de cierre
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(146,41): error C2601: 'Grafo::encontrarMenor': las definiciones de funciones locales no son válidas
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(75): message : esta línea contiene un elemento '{' y no se ha encontrado su elemento de cierre
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\CorteMinimo.cpp(7,12): error C2601: 'main': las definiciones de funciones locales no son válidas
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(75): message : esta línea contiene un elemento '{' y no se ha encontrado su elemento de cierre
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Grafo.h(75): fatal  error C1075: "{": no se encontró ningún token coincidente
+  Nodo.cpp
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43,1): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43,37): error C2988: declaración o definición de plantilla irreconocible
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43,37): error C2143: error de sintaxis: falta ',' delante de '<'
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43,1): error C2244: 'Nodo<T>::setVector': no se puede hacer coincidir la definición de función con una declaración existente
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43): message : vea la declaración de 'Nodo<T>::setVector'
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43,1): message : definición
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43,1): message : 'void Nodo<T>::setVector(const int)'
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43,1): message : declaraciones existentes
+C:\Users\Carmen\source\repos\CorteMinimo-EstructurasDeDatos\CorteMinimo\Nodo.h(43,1): message : 'void Nodo<T>::setVector(const std::vector<T,std::allocator<_Ty>> &)'
+  Generando código...

@@ -130,10 +130,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CorteMinimo.cpp" />
+    <ClCompile Include="Nodo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Grafo.h" />
-    <ClInclude Include="Node.h" />
+    <ClInclude Include="Nodo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

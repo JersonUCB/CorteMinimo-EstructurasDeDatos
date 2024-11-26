@@ -1,113 +1,172 @@
 #pragma once
-#include <unordered_map>
-#include <iostream>
+#include <string>
 #include <vector>
+#include <queue>
+#include <iostream>
 #include <fstream>
-#include "Node.h"
+#include <unordered_map>
+#include <sstream>
+#include "Nodo.h" 
+#include <cstdlib>
+#include <ctime>
+#include <random>
+#include <chrono>
+#define TAM 900
 
-template <class T = string>
+using namespace std;
+
 class Grafo {
 private:
-    unordered_map<string, Node<T>> grafo;
-
+    unordered_map<string, Nodo<string>> G; // Usar unordered_map
+    int tamanioGrafo = 0;
+    string aristas[TAM];
+    int tamanioArr = -1;
+    unordered_map<string, Nodo<string>>::iterator it;
 public:
-    void leerArchivo(const string& nombreArchivo) {
-        ifstream archivo(nombreArchivo);
-        if (!archivo.is_open()) {
-            cout << "Error al abrir el archivo." << endl;
-            return;
-        }
-        string origen, destino;
-        int peso;
-        while (archivo >> origen >> destino >> peso) {
-            insertarArista(origen, destino, peso);
-        }
-        archivo.close();
-        cout << "Archivo cargado correctamente." << endl;
+    Grafo() {};
+    ~Grafo();
+
+    void limpiar();
+    void LeerArchivo();
+    void mostrarGrafo();
+    void VerticesAleatorio(string& VO, string& VF);
+    void Contraer(string Vo, string Vd);
+    int getTamanioGrafo();
+    int contarAristas();
+    Grafo copiaLista();
+    void encontrarMenor();
+};
+
+inline Grafo::~Grafo() {
+}
+
+inline void Grafo::limpiar() {
+}
+
+inline void Grafo::LeerArchivo() {
+    string numero;
+    string Vertice;
+
+    int inicio = 0;
+    ifstream archivo("prueba.txt");
+    if (!archivo.is_open()) {
+        throw runtime_error("No se pudo abrir el archivo");
     }
-
-    void leerArchivo2(const string& nombreArchivo) {
-        ifstream archivo(nombreArchivo);
-        if (!archivo.is_open()) {
-            cout << "Error al abrir el archivo." << endl;
-            return;
-        }
-        string origen, destino;
-        while (archivo >> origen ) {
-            cout << origen<<"->";
-            while (destino !=  "-1")
-            {
-                archivo >> destino;
-                if (destino != "-1") {
-                    insertarArista(origen, destino, 0);
-                }
-                cout << destino << ",";
-            }
-            destino = "0";
-            cout << endl;
-        }
-        archivo.close();
-        cout << "Archivo cargado correctamente." << endl;
-    }
-
-    void insertarArista(const string& origen, const string& destino, int peso) {
-        grafo[origen].insertarVecino(destino, peso);
-        grafo[destino].insertarVecino(origen, peso);
-    }
-
-    void mostrar() const {
-        for (const auto& [nombre, nodo] : grafo) {
-            cout << nombre << " -> ";
-            nodo.mostrar();
-        }
-    }
-
-    
-
-
-    void mostrarCaminos(const string& origen) const {
-        for (const auto& [nombre, nodo] : grafo) {
-            if (nodo.getDistancia() == INT_MAX) {
-                cout << "No hay camino desde " << origen << " a " << nombre << endl;
+    while (archivo >> numero) {
+        if (numero != "-1") {
+            if (inicio == 0) {
+                Vertice = numero;
+                tamanioGrafo++;
+                tamanioArr++;
+                aristas[tamanioArr] = numero;
             }
             else {
-                cout << " " << origen << " - " << nombre << " = (Distancia: " << nodo.getDistancia() << ") ||| ";
-                string actual = nombre;
-                while (actual != "-1") {
-                    cout << actual;
-                    actual = grafo.at(actual).getPadre();
-                    if (actual != "-1") cout << " <- ";
+                Vertice.getVector()->InsertarFin(numero);
+            }
+            inicio++;
+        }
+        else {
+            inicio = 0;
+        }
+    }
+    archivo.close();
+}
+
+inline void Grafo::mostrarGrafo() {
+    for (auto it = G.begin(); it != G.end(); it++) {
+        cout << "Vertice " << it->first << ": ";
+        if (it->second.getVector() != nullptr) {
+            it->second.getVector()->printElements();
+        }
+        cout << endl;
+    }
+
+    inline void Grafo::VerticesAleatorio(string & Vo, string & Vd) {
+        random_device rd;
+        mt19937 gen(rd());
+
+        uniform_int_distribution<> dis(0, tamanioArr);
+        int num1 = dis(gen);
+        Vd = aristas[num1];
+        aristas[num1] = aristas[tamanioArr];
+        tamanioArr--;
+        uniform_int_distribution<> dis2(0, G[Vd].getVector()->getContador() - 1);
+        int num2 = dis2(gen);
+        Nodo<string>* aux = G[Vd].getVector()->buscarIesimo(num2);
+        Vo = aux->getElemento();
+    }
+
+    inline void Grafo::Contraer(string Vo, string Vd) {
+        Nodo<string>* i = G[Vd].getVector()->getPrimero();
+        while (i != NULL) {
+            if (i->getElemento() != Vo) {
+                G[Vo].getVector()->InsertarFin(i->getElemento());
+                G[i->getElemento()].getVector()->InsertarFin(Vo);
+            }
+            G[i->getElemento()].getVector()->eliminarDato(Vd);
+            G[i->getElemento()].getVector()->disminuircont();
+            i = i->getSiguiente();
+        }
+        G.erase(Vd);
+        tamanioGrafo--;
+    }
+
+    inline int Grafo::getTamanioGrafo() {
+        return tamanioGrafo;
+    }
+
+    inline int Grafo::contarAristas() {
+        int resp;
+        it = G.begin();
+        resp = it->second.getVector()->getContador();
+        return resp;
+    }
+
+    inline Grafo Grafo::copiaLista() {
+        Grafo grafoSalida;
+
+        for (int i = 0; i <= tamanioArr; ++i) {
+            grafoSalida.aristas[i] = aristas[i];
+        }
+        grafoSalida.tamanioArr = tamanioArr;
+
+        grafoSalida.tamanioGrafo = tamanioGrafo;
+
+        for (auto it = G.begin(); it != G.end(); ++it) {
+            Nodo<string>* aux = it->second.getVector()->getPrimero();
+            while (aux != nullptr) {
+                grafoSalida.G[it->first].getVector()->InsertarFin(aux->getElemento());
+                aux = aux->getSiguiente();
+            }
+        }
+
+        return grafoSalida;
+    }
+
+    inline void Grafo::encontrarMenor() {
+        int menor;
+        int MinMenor = 0;
+        string Vo, Vd;
+
+        for (int i = 0; i < 90000; i++) {
+            auto start = std::chrono::high_resolution_clock::now();
+            Grafo grafo2 = copiaLista();
+            while (grafo2.getTamanioGrafo() > 2) {
+                grafo2.VerticesAleatorio(Vo, Vd);
+                grafo2.Contraer(Vo, Vd);
+            }
+            menor = grafo2.contarAristas();
+            grafo2.limpiar();
+            if (i != 0) {
+                cout << "Ejecucion Nro " << i << ": de 90000" << " ->" << " Menor: " << menor << endl;
+                if (MinMenor > menor) {
+                    MinMenor = menor;
                 }
-                cout << endl;
+            }
+            else {
+                MinMenor = menor;
             }
         }
+        cout << "Menor de todas las iteraciones: " << MinMenor << endl;
     }
-
-    void eliminarDeLista(vector<pair<string, int>>& lista, const string& nodo)
-    {
-        for (int i = 0; i < lista.size(); i++)
-        {
-            if (lista[i].first == nodo)
-            {
-                swap(lista[i], lista.back());
-                lista.pop_back();
-            }
-        }
-        cout << "Nodo " << nodo << " no encontrado en la lista de adyacencia." << endl;
-    }
-
-    void eliminarArista(const string& origen, const string& destino)
-    {
-        auto& adyacentesOrigen = grafo[origen].getListAdyacentes();
-        eliminarDeLista(adyacentesOrigen, destino);
-
-        auto& adyacentesDestino = grafo[destino].getListAdyacentes();
-        eliminarDeLista(adyacentesDestino, origen);
-
-        cout << "Arista entre " << origen << " y " << destino << " eliminada correctamente." << endl;
-    }
-
-    void contraer() {
-
-    }
-};
+	

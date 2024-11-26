@@ -26,6 +26,30 @@ public:
         cout << "Archivo cargado correctamente." << endl;
     }
 
+    void leerArchivo2(const string& nombreArchivo) {
+        ifstream archivo(nombreArchivo);
+        if (!archivo.is_open()) {
+            cout << "Error al abrir el archivo." << endl;
+            return;
+        }
+        string origen, destino;
+        while (archivo >> origen ) {
+            cout << origen<<"->";
+            while (destino !=  "-1")
+            {
+                archivo >> destino;
+                if (destino != "-1") {
+                    insertarArista(origen, destino, 0);
+                }
+                cout << destino << ",";
+            }
+            destino = "0";
+            cout << endl;
+        }
+        archivo.close();
+        cout << "Archivo cargado correctamente." << endl;
+    }
+
     void insertarArista(const string& origen, const string& destino, int peso) {
         grafo[origen].insertarVecino(destino, peso);
         grafo[destino].insertarVecino(origen, peso);
@@ -83,4 +107,7 @@ public:
         cout << "Arista entre " << origen << " y " << destino << " eliminada correctamente." << endl;
     }
 
+    void contraer() {
+
+    }
 };

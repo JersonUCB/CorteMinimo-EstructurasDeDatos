@@ -33,7 +33,8 @@ public:
 
     void mostrar() const {
         for (const auto& [nodo, peso] : listAdyacentes) {
-            cout << nodo << " (" << peso << "), ";
+            //cout << nodo << " (" << peso << "), ";
+            cout << nodo << ",";
         }
         cout << endl;
     }

@@ -5,6 +5,13 @@
 using namespace std;
 
 int main() {
+    Grafo<> g;
+    g.leerArchivo2("PRUEBA_Min_Cut.txt");
+    g.mostrar();
+
+}
+/*
+int main() {
     int op;
     Grafo<> g;
     string origen, destino;
@@ -26,7 +33,7 @@ int main() {
 
         switch (op) {
         case 1:
-            g.leerArchivo("ValoradoBoliviaTexto.txt");
+            g.leerArchivo("PRUEBA_Min_Cut.txt");
             break;
         case 2:
             cout << "Ingrese nodo origen: ";
@@ -73,3 +80,4 @@ int main() {
 
     return 0;
 }
+*/
